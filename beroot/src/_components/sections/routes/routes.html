@@ -1,0 +1,96 @@
+<link rel="stylesheet" href="./routes.scss">
+
+<section class="block block--hero">
+    <div class="container">
+        <div class="routes">
+            <div class="breadcrumbs text text--small">
+                <a href="/">Главная</a>
+                <p>/</p>
+                <a href="/">Санкт-Петербург</a>
+                <p>/</p>
+                <span>Маршруты</span>
+            </div>
+            <div class="routes__head">
+                <h1 class="heading heading--large heading--color-black">
+                    Пешеходные маршруты <br>
+                    по Санкт-Петербургу
+                </h1>
+                <div class="head__navigation">
+                    <div class="navigation__city">
+                        <div class="city__items">
+                            <a class="text text--medium text--color-grey" href="">Санкт-Петербург</a>
+                            <a class="text text--medium text--color-grey" href="">Москва</a>
+                            <a class="text text--medium text--color-grey" href="">Казань</a>
+                        </div>
+                        <div class="navigation__city-different">
+                            <div class="different__main text text--medium text--color-grey">
+                                Другой
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="different__modal">
+                                <div class="different__modal-wrap">
+                                    <a class="text text--medium text--color-grey" href="">Калининград</a>
+                                    <a class="text text--medium text--color-grey" href="">Омск</a>
+                                    <a class="text text--medium text--color-grey" href="">Новосибирск</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text text--medium text--color-grey">
+                        Авторские прогулки с аудиогидами от местных историков, архитекторов
+                        и знатоков города. Слушайте истории улиц прямо по дороге.
+                    </p>
+                </div>
+            </div>
+            <div class="routes__tabs">
+                <div class="routes__tabs-filter">
+                    <button class="button button--medium button--white text--color-grey button--rounded-full current">Любые</button>
+                    <button class="button button--medium button--white text--color-grey button--rounded-full">До 2 часов</button>
+                    <button class="button button--medium button--white text--color-grey button--rounded-full">2–4 часа</button>
+                    <button class="button button--medium button--white text--color-grey button--rounded-full">Более 4 часов</button>
+                </div>
+                <div class="routes__tabs-action">
+                    <div class="action__sorting">
+                        <div class="action__sorting-main text text--medium text--color-grey">
+                            По популярности
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="action__sorting-modal">
+                            <div class="modal__wrapper">
+                                <a class="text text--medium text--color-grey" href="">Сначала новые</a>
+                                <a class="text text--medium text--color-grey" href="">Сначала старые</a>
+                                <a class="text text--medium text--color-grey" href="">Сначала бесплатные</a>
+                                <a class="text text--medium text--color-grey" href="">Сначала платные</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="action__type">
+                        <button class="text text--medium text--color-grey current">
+                            <i data-lucide="layout-grid"></i>
+                            Плитка
+                        </button>
+                        <button class="text text--medium text--color-grey">
+                            <i data-lucide="map"></i>
+                            На карте
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="routes__content">
+                <h2 class="visually-hidden">Список маршрутов</h2>
+                <!-- @include src/_components/single/filter/filter-placeholder.html -->
+                <div class="routes__content-frame">
+                    <!-- @include src/_components/single/places/places-item.html -->
+                    <!-- @include src/_components/single/places/places-item.html -->
+                    <!-- @include src/_components/single/places/places-item.html -->
+                    <!-- @include src/_components/single/places/places-item.html -->
+                    <!-- @include src/_components/single/places/places-item.html -->
+                    <!-- @include src/_components/single/places/places-item.html -->
+                    <!-- @include src/_components/single/places/places-item.html -->
+                    <!-- @include src/_components/single/places/places-item.html -->
+                    <!-- @include src/_components/single/places/places-item.html -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

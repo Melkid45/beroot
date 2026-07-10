@@ -1,0 +1,111 @@
+<link rel="stylesheet" href="../partner_request/partner_request.scss">
+
+
+<section id="request" class="block block--y">
+    <div class="request request--center">
+        <img src="@/assets/_images/author_req.png" alt="">
+        <div class="request__content">
+            <div class="request__content-head">
+                <div class="tag text text--small text--color-accent">
+                    Анкета
+                </div>
+                <h2 class="heading heading--medium heading--color-black">
+                    Анкета кандидата в команду BeetRoute
+                </h2>
+                <p class="text text--small text--color-grey">
+                    Заполните форму — мы изучим её в течение трёх рабочих дней и пригласим подходящих кандидатов на онлайн-собеседование.
+                </p>
+            </div>
+            <form class="request__form" action="" novalidate>
+                <div class="request__inputs request__inputs--column">
+                    <div class="request__input" data-required-field>
+                        <label class="text text--tiny text--color-grey" for="author-name">
+                            Ваше имя и фамилия *
+                        </label>
+                        <input class="text text--small text--color-black" id="author-name" name="author_name"
+                            placeholder="Имя и фамилия" type="text" autocomplete="name">
+                    </div>
+                    <div class="request__input" data-required-field>
+                        <label class="text text--tiny text--color-grey" for="author-phone">
+                            Контактный телефон *
+                        </label>
+                        <input class="text text--small text--color-black" id="author-phone" name="author_phone"
+                            placeholder="+7 (___) ___-__-__" type="tel" inputmode="tel" autocomplete="tel"
+                            data-phone-mask>
+                    </div>
+                    <div class="request__input" data-required-field>
+                        <label class="text text--tiny text--color-grey" for="author-city">
+                            Ваш основной город *
+                        </label>
+                        <div class="request__input-wrap" data-request-select>
+                            <input class="text text--small text--color-black" id="author-city"
+                                placeholder="Выберите город" type="text" readonly name="city"
+                                role="combobox" aria-autocomplete="none" aria-haspopup="listbox"
+                                aria-expanded="false" aria-controls="author-city-options">
+                            <i data-lucide="chevron-down"></i>
+                            <div class="wrap__choose" id="author-city-options" role="listbox">
+                                <span class="text text--small text--color-black" data-select-option>
+                                    Омск
+                                </span>
+                                <span class="text text--small text--color-black" data-select-option>
+                                    Санкт-Петербург
+                                </span>
+                                <span class="text text--small text--color-black" data-select-option>
+                                    Москва
+                                </span>
+                                <span class="text text--small text--color-black" data-select-option>
+                                    Казань
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="request__input request__input-two" data-required-field>
+                        <label class="text text--tiny text--color-grey">
+                            Ваша роль *
+                        </label>
+                        <div class="request__input-radio">
+                            <div class="radio__item">
+                                <span class="text text--small text--color-grey">Я экскурсовод</span>
+                                <input type="radio" name="author_role" value="guide" aria-label="Я экскурсовод">
+                            </div>
+                            <div class="radio__item">
+                                <span class="text text--small text--color-grey">Я блогер / создатель контента </span>
+                                <input type="radio" name="author_role" value="content_creator"
+                                    aria-label="Я блогер или создатель контента">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="request__input" data-required-field>
+                        <label class="text text--tiny text--color-grey" for="author-portfolio">
+                            Ссылка на ваше портфолио или соц сети *
+                        </label>
+                        <input class="text text--small text--color-black" id="author-portfolio" name="portfolio_url"
+                            placeholder="Введите ссылку" type="text">
+                    </div>
+                    <div class="request__input request__input-full" data-required-field>
+                        <label class="text text--tiny text--color-grey" for="author-favorite-place">
+                            Расскажите в двух словах о вашем любимом месте в городе *
+                        </label>
+                        <input class="text text--small text--color-black" id="author-favorite-place" name="favorite_place"
+                            placeholder="Мое любимое место..." type="text">
+                    </div>
+                </div>
+                <div class="request__action">
+                    <button class="button button--medium button--blue button--rounded-full" type="submit">
+                        Отправить заявку в систему
+                        <i data-lucide="arrow-down-right"></i>
+                    </button>
+                    <div class="request__action-policy">
+                        <div class="policy__checkbox">
+                            <input type="checkbox" name="policy" aria-label="Согласие на обработку персональных данных">
+                        </div>
+                        <p class="text text--small text--color-grey">
+                            Нажимая чек-бокс, вы соглашаетесь с <a href="">политикой конфиденциальности</a>
+                            и даёте согласие на обработку персональных данных.
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

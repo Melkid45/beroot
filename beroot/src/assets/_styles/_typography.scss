@@ -1,0 +1,187 @@
+@use './breakpoints' as *;
+
+.heading {
+    font-weight: 500;
+    letter-spacing: 0;
+    /*Size*/
+
+    &--giant {
+        font-size: 64px;
+        line-height: 110%;
+    }
+
+    &--large {
+        font-size: 38px;
+        line-height: 110%;
+    }
+
+    &--medium {
+        font-size: 28px;
+        line-height: 110%;
+    }
+
+    &--small {
+        font-size: 21px;
+        line-height: 110%;
+    }
+
+    &--color-white {
+        color: var(--white);
+    }
+
+    &--color-black {
+        color: var(--black);
+    }
+
+    &--color-accent {
+        color: var(--blue);
+    }
+
+    &--medi{
+        font-weight: 400;
+    }
+}
+
+.text {
+    font-weight: 400;
+    letter-spacing: 0;
+    /*Size*/
+
+    &--giant {
+        font-size: 28px;
+        line-height: 120%;
+    }
+
+    &--large {
+        font-size: 24px;
+        line-height: 120%;
+    }
+    &--medium {
+        font-size: 18px;
+        line-height: 120%;
+    }
+    &--small{
+        font-size: 16px;
+        line-height: 120%;
+    }
+    &--tiny {
+        font-size: 14px;
+        line-height: 120%;
+    }
+
+    /*Colors*/
+
+    &--color-white {
+        color: var(--white);
+    }
+
+    &--color-black {
+        color: var(--black);
+    }
+
+    &--color-accent {
+        color: var(--blue);
+    }
+    &--color-grey {
+        color: var(--grey);
+    }
+
+    &--medi{
+        font-weight: 500;
+    }
+}
+
+@include down(xl) {
+    .heading {
+        &--giant {
+            font-size: 48px;
+            line-height: 55px;
+        }
+
+        &--large {
+            font-size: 28px;
+            line-height: 34px;
+        }
+
+        &--medium {
+            font-size: 22px;
+            line-height: 29px;
+        }
+
+        &--small {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+
+    .text {
+        &--giant {
+            font-size: 22px;
+            line-height: 29px;
+        }
+
+        &--large {
+            font-size: 18px;
+            line-height: 24px;
+        }
+
+        &--medium {
+            font-size: 14px;
+            line-height: 21px;
+        }
+
+        &--small,
+        &--tiny {
+            font-size: 12px;
+            line-height: 17px;
+        }
+    }
+}
+
+@include down(wide) {
+    .heading--giant {
+        font-size: clamp(42px, 3.35vw, 46px);
+        line-height: 1.15;
+    }
+}
+
+@include down(md) {
+    .heading {
+        &--giant {
+            font-size: 36px;
+            line-height: 43px;
+        }
+
+        &--large {
+            font-size: 26px;
+            line-height: 32px;
+        }
+    }
+}
+
+@include down(sm) {
+    .heading {
+        &--giant {
+            font-size: 28px;
+            line-height: 35px;
+        }
+
+        &--large,
+        &--medium {
+            font-size: 22px;
+            line-height: 29px;
+        }
+    }
+
+    .text {
+        &--giant {
+            font-size: 22px;
+            line-height: 29px;
+        }
+
+        &--large {
+            font-size: 16px;
+            line-height: 25px;
+        }
+    }
+}

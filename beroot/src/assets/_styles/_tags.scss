@@ -1,0 +1,29 @@
+.tag {
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 16px;
+    background: var(--light-blue);
+    max-width: max-content;
+    &__white{
+        background: #fff;   
+    }
+    svg {
+        width: 16px;
+        height: 16px;
+        fill: var(--blue);
+
+        circle {
+            color: var(--white);
+            fill: var(--white);
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .tag {
+        padding: 10px 16px;
+        border-radius: 12px;
+    }
+}

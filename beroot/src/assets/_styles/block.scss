@@ -1,0 +1,85 @@
+@use './breakpoints' as *;
+
+.block {
+    width: 100%;
+    position: relative;
+    &:has(.block__background) {
+        padding-bottom: 106px;
+        .block__background {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            object-fit: cover;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            background: linear-gradient(0deg, rgba(17, 18, 20, 0.8) 0%, rgba(17, 18, 20, 0.6) 34.67%);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+    }
+    &--hero {
+        padding: var(--hero-padding) 0 56px;
+    }
+
+    &--pt {
+        padding: var(--section-padding) 0px 0px;
+    }
+
+    &--pb {
+        padding: 0 0 var(--hero-padding);
+    }
+
+    &--y {
+        padding: var(--section-padding) 0px;
+    }
+
+    @include down(xl) {
+        &--hero {
+            padding: 112px 0 42px;
+        }
+
+        &--pb {
+            padding-bottom: var(--section-padding);
+        }
+    }
+
+    @include down(wide) {
+        &--hero {
+            padding: 96px 0 48px;
+        }
+    }
+
+    @include down(md) {
+        &--hero {
+            padding: 84px 0 48px;
+        }
+    }
+
+    @include down(sm) {
+        &--hero {
+            padding: 84px 0 57px;
+        }
+
+        &--pt {
+            padding-top: 32px;
+        }
+
+        &--pb {
+            padding-bottom: 32px;
+        }
+
+        &--y {
+            padding: 32px 0;
+        }
+    }
+}

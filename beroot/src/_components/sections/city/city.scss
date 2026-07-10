@@ -1,0 +1,187 @@
+@use '../../../assets/_styles/breakpoints' as *;
+
+.city-hero {
+    min-height: clamp(812px, 56.25vw, 1080px);
+    display: flex;
+
+    > .container {
+        display: flex;
+    }
+
+    .block__background {
+        object-position: center;
+    }
+}
+
+.city {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 64px;
+    position: relative;
+    z-index: 2;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 48px;
+
+        .city__information {
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+
+            .city__tabs {
+                display: flex;
+                align-items: center;
+                gap: 32px;
+
+                .city__tab {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    color: var(--light-white-65);
+
+                    svg {
+                        height: 16px;
+                        width: auto;
+                    }
+
+                    &:first-child {
+                        padding: 14px 32px;
+                        border-radius: 16px;
+                        background: #fff;
+                        color: var(--blue);
+                    }
+                }
+            }
+
+            .city__text {
+                max-width: 980px;
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+
+                p {
+                    color: var(--light-white-65);
+                }
+            }
+
+            .city__action {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+
+        .city__qr {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+
+            span {
+                text-align: center;
+            }
+
+            img {
+                width: 120px;
+                aspect-ratio: 1;
+                padding: 6px;
+                border-radius: 12px;
+                background: #fff;
+            }
+        }
+    }
+}
+
+@include down(lg) {
+    .city-hero {
+        min-height: 760px;
+    }
+
+    .city__content {
+        .city__information .city__tabs {
+            gap: 20px;
+        }
+
+        .city__qr img {
+            width: 104px;
+        }
+    }
+}
+
+@include down(tablet) {
+    .city__content {
+        .city__information {
+            width: 100%;
+
+            .city__text {
+                h1 br,
+                p br {
+                    display: none;
+                }
+            }
+        }
+
+        .city__qr {
+            display: none;
+        }
+    }
+}
+
+@include down(sm) {
+    .city-hero {
+        min-height: 900px;
+        padding-bottom: 32px;
+
+        > .container {
+            width: calc(100% - 32px);
+        }
+    }
+
+    .city {
+        gap: 48px;
+
+        &__content .city__information {
+            gap: 24px;
+
+            .city__tabs {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+
+                .city__tab {
+                    min-height: 48px;
+                    padding: 10px;
+                    border-radius: 12px;
+                    background: rgba(255, 255, 255, 0.1);
+
+                    &:first-child {
+                        padding: 10px;
+                    }
+                }
+            }
+
+            .city__text {
+                gap: 20px;
+            }
+
+            .city__action {
+                align-items: stretch;
+                flex-direction: column;
+                gap: 12px;
+
+                .button {
+                    width: 100%;
+                    justify-content: center;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

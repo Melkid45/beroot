@@ -1,0 +1,175 @@
+<link rel="stylesheet" href="./place.scss">
+
+<section class="block block--y">
+    <div class="container">
+        <div class="place">
+            <div class="place__content">
+                <div class="place__content-tags">
+                    <div class="tags__review text text--medium">
+                        <i data-lucide="star"></i>
+                        <span>4.9</span>
+                        <p>(214 отзыва)</p>
+                    </div>
+                    <div class="tags__type text text--medium">
+                        Кофейня
+                    </div>
+                    <div class="tags__sale text text--medium">
+                        Скидка 10% с BeetRoute
+                    </div>
+                </div>
+                <h1 class="heading heading--large heading--color-black">
+                    Baggins Coffee
+                </h1>
+                <div class="place__content-description">
+                    <h2 class="text text--large text--color-black">
+                        Почему стоит зайти
+                    </h2>
+                    <p class="text text--medium text--color-grey">
+                        Baggins Coffee — один из тех редких петербургских кофеен, куда хочется возвращаться не за
+                        трендом, а за атмосферой. Двухэтажный особняк начала прошлого века, высокие потолки, деревянные
+                        подоконники с видом во двор-колодец: здесь физически хочется замедлиться. Зерно меняется каждый
+                        сезон — сейчас это эфиопский натуральный процессинг с ягодными нотами. Флэт уайт здесь один из
+                        лучших в квартале. <br><br>
+                        На втором этаже тихая зона без ноутбуков — идеально для разговора. По утрам выпечку привозят из
+                        пекарни на соседней улице. Владелец, Николай, знает в лицо постоянных гостей и иногда угощает
+                        экспериментальными фильтрами, если видит, что вы понимаете кофе.
+                    </p>
+                </div>
+                <div class="place__content-person">
+                    <div class="avatar heading heading--large heading--color-white">
+                        A
+                        <i data-lucide="circle-check"></i>
+                    </div>
+                    <div class="person__content">
+                        <div class="person__content-title">
+                            <h3 class="text text--large text--color-black">
+                                Анна Климова
+                            </h3>
+                            <p class="text text--large text--color-grey">
+                                @annakl
+                            </p>
+                        </div>
+                        <div class="person__content-role">
+                            <span class="text text--medium text--color-grey">
+                                Историк архитектуры
+                            </span>
+                            <span class="text text--medium text--color-grey">
+                                Петербург
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="place__content-related">
+                    <h2 class="text text--large text--color-black">
+                        Это заведение есть в следующих маршрутах:
+                    </h2>
+                    <div class="related__frame">
+                        <!-- @include src/_components/single/places/places-item.html -->
+                        <!-- @include src/_components/single/places/places-item.html -->
+                        <!-- @include src/_components/single/places/places-item.html -->
+                    </div>
+                </div>
+            </div>
+            <div class="place__article">
+                <div class="place__article-map">
+                    <div id="map" data-yandex-map data-api-key="6f349936-86d6-4e8a-8d4d-acb57c3574f6" data-coords="59.928235, 30.312256" data-zoom="16"
+                        data-map-icon="coffee"
+                        data-map-title="Baggins Coffee"
+                        data-map-address="Гражданская ул., 13-15, Санкт-Петербург"></div>
+                    <a href="" class="tag tag__white text text--small text--color-accent" data-open-map-link>
+                        Открыть карту
+                    </a>
+                </div>
+                <div class="place__article-information">
+                    <div class="information__item">
+                        <div class="icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <div class="information__item-text">
+                            <span class="text text--medium text--color-grey">Адрес</span>
+                            <p class="text text--small text-color-black">Гражданская ул., 13-15, Санкт-Петербург</p>
+                        </div>
+                    </div>
+                    <div class="information__item">
+                        <div class="icon">
+                            <i data-lucide="clock-4"></i>
+                        </div>
+                        <div class="information__item-text">
+                            <span class="text text--medium text--color-grey">Часы работы</span>
+                            <ul>
+                                <li class="text text--small">
+                                    <span>Сегодня (Вт)</span>
+                                    <p>10:00 – 22:00</p>
+                                </li>
+                                <li class="text text--small">
+                                    <span>Ср – Пт</span>
+                                    <p>10:00 – 22:00</p>
+                                </li>
+                                <li class="text text--small">
+                                    <span>Сб – Вс</span>
+                                    <p>09:00 – 23:00</p>
+                                </li>
+                                <li class="text text--small">
+                                    <span>Пн</span>
+                                    <p>Выходной</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="information__item">
+                        <div class="icon">
+                            <i data-lucide="phone"></i>
+                        </div>
+                        <div class="information__item-text">
+                            <span class="text text--medium text--color-grey">Телефон</span>
+                            <a href="" class="text text--small text--color-accent">
+                                +8 (800) 600-70-15
+                            </a>
+                        </div>
+                    </div>
+                    <div class="information__item">
+                        <div class="icon">
+                            <i data-lucide="globe"></i>
+                        </div>
+                        <div class="information__item-text">
+                            <span class="text text--medium text--color-grey">Сайт и соцсети</span>
+                            <a href="" class="text text--small text--color-accent">
+                                bagginscoffee.com
+                            </a>
+                            <a href="" class="text text--small text--color-accent">
+                                Вконтакте
+                            </a>
+                        </div>
+                    </div>
+                    <div class="information__item">
+                        <div class="icon">
+                            <i data-lucide="credit-card"></i>
+                        </div>
+                        <div class="information__item-text">
+                            <span class="text text--medium text--color-grey">Средний чек</span>
+                            <p class="text text--small text-color-black">
+                                800 – 1 200 ₽ · Карты принимают
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="place__article-action">
+                    <a class="button button--medium button--blue button--rounded-full" href="">
+                        Забрать купон на скидку
+                    </a>
+                    <div class="action__buttons">
+                        <a class="text text--small text--color-grey" href="">
+                            Поделиться
+                        </a>
+                        <a class="text text--small text--color-grey" href="">
+                            Сохранить
+                        </a>
+                        <a class="text text--small text--color-grey" href="">
+                            Пожаловаться
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

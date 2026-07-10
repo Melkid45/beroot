@@ -1,0 +1,181 @@
+@use '../../../assets/_styles/breakpoints' as *;
+
+.faq-block {
+    @include down(xl) {
+        padding-bottom: 0;
+    }
+
+    @include down(lg) {
+        padding: 64px 0;
+    }
+
+    @include down(md) {
+        padding: 48px 0;
+    }
+
+    @include down(sm) {
+        padding: 32px 0;
+    }
+}
+
+.faq{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    background: #fff;
+    padding: 64px;
+    box-shadow: 0px 5.33px 17.33px 0px #9191911A;
+    border-radius: 64px;
+    &__head{
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .faq__item{
+            width: 100%;
+            padding: 32px 0px;
+            transition: all 0.5s ease;
+            &:first-child{
+                padding-top: 0;
+            }
+            &:last-child{
+                padding-bottom: 0;
+            }
+            &:not(:first-child){
+                border-top: 1px solid var(--light-blue);
+            }
+            &.current{
+                .faq__item-button{
+                    rotate: 180deg;
+                    background: var(--blue);
+                    svg{
+                        color: #fff;
+                    }
+                    .lucide-minus{
+                        opacity: 1;
+                    }
+                    .lucide-plus{
+                        opacity: 0;
+                    }
+                }
+            }
+            &-head{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 24px;
+                width: 100%;
+                background: transparent;
+                color: inherit;
+                text-align: left;
+                cursor: pointer;
+                .faq__item-button{
+                    width: 42px;
+                    aspect-ratio: 1/1;
+                    border-radius: 50%;
+                    background: #fff;
+                    box-shadow: 2.67px 2.67px 17.33px 0px #9191911A;
+                    transition: all 0.5s ease;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    svg{
+                        height: 20px;
+                        width: auto;
+                        transition: all 0.5s ease;
+                        flex-shrink: 0;
+                        position: absolute;
+                        color: var(--grey);
+                    }
+                    .lucide-minus{
+                        opacity: 0;
+                    }
+                }
+            }
+            &-wrapper{
+                max-height: 0;
+                overflow: hidden;
+                transition: all 0.5s ease;
+                p{
+                    line-height: 140%;
+                    padding-top: 32px;
+                    max-width: 80%;
+                    color: var(--grey);
+                }
+            }
+        }
+    }
+
+    @include down(xl) {
+        min-height: 723px;
+        gap: 32px;
+        padding: 48px;
+        border-radius: 42px;
+
+        &__head {
+            gap: 24px;
+        }
+
+        &__content .faq__item {
+            padding: 25px 0;
+
+            &-head .faq__item-button {
+                width: 32px;
+
+                svg {
+                    height: 16px;
+                }
+            }
+
+            &-wrapper p {
+                padding-top: 24px;
+            }
+        }
+    }
+
+    @include down(lg) {
+        min-height: 0;
+        padding: 40px;
+        border-radius: 32px;
+    }
+
+    @include down(md) {
+        padding: 32px;
+
+        &__content .faq__item {
+            padding: 22px 0;
+        }
+    }
+
+    @include down(sm) {
+        gap: 24px;
+        padding: 24px;
+        border-radius: 42px;
+
+        &__content .faq__item {
+            padding: 20px 0;
+
+            &-head {
+                gap: 16px;
+                font-size: 16px;
+                line-height: 22px;
+            }
+
+            &-wrapper p {
+                max-width: 100%;
+                padding-top: 16px;
+            }
+        }
+    }
+
+    @include down(xs) {
+        min-height: 654px;
+    }
+}

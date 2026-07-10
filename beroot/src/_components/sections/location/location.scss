@@ -1,0 +1,123 @@
+@use '../../../assets/_styles/breakpoints' as *;
+
+.location {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+
+    &__head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        .head__text {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            &:hover {
+                svg {
+                    rotate: -90deg;
+                }
+            }
+
+            svg {
+                height: 20px;
+                width: auto;
+                transition: all 0.5s ease;
+            }
+        }
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+
+        &:has(.location__item) {
+            .location__item {
+                grid-row: span 3;
+                &--top {
+                    grid-row: span 7 !important;
+                }
+
+                &:nth-child(1) {
+                    grid-row: span 4;
+                }
+
+                &:nth-child(2n) {
+                    grid-row: span 4;
+                }
+
+                &:nth-child(5) {
+                    grid-column: 1;
+                    grid-row: 5 / span 3;
+                }
+
+                &:nth-child(6) {
+                    grid-column: 3;
+                    grid-row: 4 / span 4;
+                }
+            }
+        }
+    }
+
+    @include down(xl) {
+        gap: 32px;
+
+        &__head .head__text {
+            gap: 24px;
+        }
+
+        &__content {
+            gap: 20px;
+        }
+    }
+
+    @include down(lg) {
+        &__content {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+
+            &:has(.location__item) .location__item {
+                grid-column: auto !important;
+                grid-row: span 1 !important;
+
+                &--top {
+                    grid-row: span 2 !important;
+                }
+            }
+        }
+    }
+
+    @include down(sm) {
+        gap: 24px;
+
+        &__head {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 20px;
+
+            .head__text {
+                gap: 20px;
+            }
+        }
+
+        &__content {
+            grid-template-columns: 1fr;
+            gap: 16px;
+
+            &:has(.location__item) .location__item,
+            &:has(.location__item) .location__item--top {
+                min-height: 420px;
+                grid-row: auto !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,190 @@
+@use '../../../assets/_styles/breakpoints' as *;
+
+.steps {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+
+    &__head {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+
+        .steps__item {
+            border-radius: 24px;
+            box-shadow: 0px 5.33px 17.33px 0px #9191911A;
+            background: #fff;
+            position: relative;
+            padding: 42px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 64px;
+            min-height: 350px;
+            height: auto;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            cursor: pointer;
+            &:hover{
+                background: var(--blue);
+                .steps__item-icon{
+                    background: #fff;
+                    svg{
+                        color: var(--blue);
+                    }
+                }
+                h3{
+                    color: #fff;
+                }
+                p{
+                    color: var(--light-white-65);
+                }
+                a{
+                    color: #fff;
+                    svg{
+                        rotate: -90deg;
+                    }
+                }
+            }
+            &-number {
+                font-weight: 500;
+                font-size: 266.67px;
+                line-height: 1;
+                letter-spacing: -4px;
+                background: linear-gradient(180deg, rgba(201, 219, 247, 0.15) 0%, rgba(219, 231, 249, 0.15) 58.96%, rgba(255, 255, 255, 0.15) 100%);
+                color: transparent;
+                background-clip: text;
+                position: absolute;
+                top: -24px;
+                right: 0;
+            }
+            &-icon{
+                width: 64px;
+                aspect-ratio: 1/1;
+                border-radius: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: var(--blue);
+                transition: all 0.5s ease;
+                svg{
+                    height: 32px;
+                    width: auto;
+                    color: #fff;
+                    transition: all 0.5s ease;
+                }
+            }
+            &-text{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                h3, p{
+                    transition: all 0.5s ease;
+                }
+                a{
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    transition: all 0.5s ease;
+                    margin-top: 12px;
+                    svg{
+                        height: 20px;
+                        width: auto;
+                        transition: all 0.5s ease;
+                    }
+                }
+            }
+        }
+    }
+
+    @include down(xl) {
+        min-height: 396px;
+        gap: 32px;
+
+        &__head {
+            gap: 24px;
+        }
+
+        &__content {
+            gap: 16px;
+
+            .steps__item {
+                min-height: 262px;
+                padding: 32px;
+                gap: 32px;
+                border-radius: 18px;
+
+                &-number {
+                    top: -20px;
+                    font-size: 160px;
+                    letter-spacing: 0;
+                }
+
+                &-icon {
+                    width: 52px;
+                    border-radius: 12px;
+
+                    svg {
+                        height: 24px;
+                    }
+                }
+
+                &-text {
+                    gap: 12px;
+                }
+            }
+        }
+    }
+
+    @include down(lg) {
+        min-height: 0;
+
+        &__content .steps__item {
+            min-height: 280px;
+            padding: 24px;
+
+            &-number {
+                font-size: 132px;
+            }
+        }
+    }
+
+    @include down(tablet) {
+        &__content {
+            grid-template-columns: 1fr;
+
+            .steps__item {
+                min-height: 220px;
+
+                br {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @include down(sm) {
+        min-height: 0;
+        gap: 24px;
+
+        &__content {
+            grid-template-columns: 1fr;
+            gap: 16px;
+
+            .steps__item {
+                min-height: 251px;
+
+                br {
+                    display: none;
+                }
+            }
+        }
+    }
+}

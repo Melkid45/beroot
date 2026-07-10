@@ -1,0 +1,31 @@
+.about-page {
+  width: min(100% - 32px, 1180px);
+  margin: 0 auto;
+  padding: 96px 0;
+}
+
+.about-page__intro {
+  max-width: 720px;
+}
+
+.about-page__eyebrow {
+  margin-bottom: 16px;
+  color: var(--blue);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.about-page__title {
+  color: var(--black);
+  font-size: clamp(44px, 7vw, 84px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.about-page__text {
+  max-width: 560px;
+  margin-top: 24px;
+  color: var(--grey);
+  font-size: 20px;
+  line-height: 1.45;
+}

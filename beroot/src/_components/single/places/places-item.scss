@@ -1,0 +1,97 @@
+@use '@/assets/_styles/breakpoints' as *;
+.places__item {
+    padding: 16px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0px 5.33px 17.33px 0px #9191911A;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    &-preview {
+        height: 286px;
+        width: 100%;
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+        padding: 20px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            object-fit: cover;
+        }
+
+        .places__item-tabs {
+            display: flex;
+            gap: 12px;
+            z-index: 1;
+            position: relative;
+
+            .places__item-tab {
+                padding: 8px 12px;
+                background: #fff;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                border-radius: 10px;
+
+                svg {
+                    height: 16px;
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    &-main {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: space-between;
+        height: auto;
+
+        .places__item-action {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .places__item-author {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: var(--grey);
+
+                .avatar {
+                    width: 42px;
+                    aspect-ratio: 1/1;
+                    border-radius: 50%;
+                    background: #00E1DE;
+                    color: #fff;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+
+            .places__item-tarif {
+                padding: 8px 16px;
+                border-radius: 64px;
+                line-height: 140%;
+
+                &.free {
+                    background: #E9FFDD;
+                    color: #43B500;
+                }
+
+                &.premium {
+                    background: #E6EDF8;
+                    color: var(--grey);
+                }
+            }
+        }
+    }
+}

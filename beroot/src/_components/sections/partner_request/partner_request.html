@@ -1,0 +1,101 @@
+<link rel="stylesheet" href="./partner_request.scss">
+
+
+<section id="request" class="block block--y">
+    <div class="request">
+        <img src="@/assets/_images/part_req.png" alt="">
+        <div class="request__content">
+            <div class="request__content-head">
+                <div class="tag text text--small text--color-accent">
+                    Заявка
+                </div>
+                <h2 class="heading heading--medium heading--color-black">
+                    Стать партнёром BeetRoute
+                </h2>
+                <p class="text text--small text--color-grey">
+                    Заполните анкету — менеджер свяжется в течение 30 минут <br>
+                    и расскажет об условиях для вашего заведения.
+                </p>
+            </div>
+            <form class="request__form" action="" novalidate>
+                <div class="request__inputs">
+                    <div class="request__input" data-required-field>
+                        <label class="text text--tiny text--color-grey" for="partner-name">
+                            Имя руководителя *
+                        </label>
+                        <input class="text text--small text--color-black" id="partner-name" name="name"
+                            placeholder="Имя руководителя" type="text" autocomplete="name">
+                    </div>
+                    <div class="request__input" data-required-field>
+                        <label class="text text--tiny text--color-grey" for="partner-phone">
+                            Контактный телефон *
+                        </label>
+                        <input class="text text--small text--color-black" id="partner-phone" name="phone"
+                            placeholder="+7 (___) ___-__-__" type="tel" inputmode="tel" autocomplete="tel"
+                            data-phone-mask>
+                    </div>
+                    <div class="request__input request__input-full" data-required-field>
+                        <label class="text text--tiny text--color-grey" for="partner-place">
+                            Название и адрес заведения *
+                        </label>
+                        <input class="text text--small text--color-black" id="partner-place" name="place"
+                            placeholder="Информация о вашем заведении" type="text">
+                    </div>
+                    <div class="request__input request__input-full" data-required-field>
+                        <label class="text text--tiny text--color-grey" for="partner-category">
+                            Категория бизнеса *
+                        </label>
+                        <div class="request__input-wrap" data-request-select>
+                            <input class="text text--small text--color-black" id="partner-category"
+                                placeholder="Выберите категорию" type="text" readonly name="category"
+                                role="combobox" aria-autocomplete="none" aria-haspopup="listbox"
+                                aria-expanded="false" aria-controls="partner-category-options">
+                            <i data-lucide="chevron-down"></i>
+                            <div class="wrap__choose" id="partner-category-options" role="listbox">
+                                <span class="text text--small text--color-black" data-select-option>
+                                    Ресторан
+                                </span>
+                                <span class="text text--small text--color-black" data-select-option>
+                                    Кафе
+                                </span>
+                                <span class="text text--small text--color-black" data-select-option>
+                                    Кофейня
+                                </span>
+                                <span class="text text--small text--color-black" data-select-option>
+                                    Зона отдыха
+                                </span>
+                                <span class="text text--small text--color-black" data-select-option>
+                                    Ресторан
+                                </span>
+                                <span class="text text--small text--color-black" data-select-option>
+                                    Кафе
+                                </span>
+                                <span class="text text--small text--color-black" data-select-option>
+                                    Кофейня
+                                </span>
+                                <span class="text text--small text--color-black" data-select-option>
+                                    Зона отдыха
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="request__action">
+                    <button class="button button--medium button--blue button--rounded-full" type="submit">
+                        Отправить заявку в систему
+                        <i data-lucide="arrow-down-right"></i>
+                    </button>
+                    <div class="request__action-policy">
+                        <div class="policy__checkbox">
+                            <input type="checkbox" name="policy" aria-label="Согласие на обработку персональных данных">
+                        </div>
+                        <p class="text text--small text--color-grey">
+                            Нажимая чек-бокс, вы соглашаетесь с <a href="">политикой конфиденциальности</a>
+                            и даёте согласие на обработку персональных данных.
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

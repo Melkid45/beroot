@@ -1,0 +1,235 @@
+@use '../../../assets/_styles/breakpoints' as *;
+
+.partner-hero {
+    min-height: clamp(812px, 56.25vw, 1080px);
+    display: flex;
+
+    > .container {
+        display: flex;
+    }
+
+    &--authors .block__background {
+        object-position: center;
+    }
+}
+
+.partners {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 64px;
+    position: relative;
+    z-index: 2;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 48px;
+
+        .partners__frame {
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+
+            &-text {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+
+                    li {
+                        color: var(--light-white-65);
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 10px;
+
+                        svg {
+                            height: 24px;
+                            width: auto;
+                            flex-shrink: 0;
+                            fill: var(--blue);
+                            color: var(--blue);
+
+                            path {
+                                stroke: #fff;
+                            }
+                        }
+                    }
+                }
+
+                p {
+                    color: var(--light-white-65);
+                    max-width: 1030px;
+                }
+            }
+
+            &-action {
+                display: flex;
+                gap: 48px;
+                align-items: center;
+
+                a,
+                button {
+                    max-width: max-content;
+                }
+
+                ul {
+                    display: flex;
+                    gap: 36px;
+
+                    li {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 6px;
+
+                        p {
+                            color: var(--light-white-65);
+                        }
+                    }
+                }
+            }
+        }
+
+        .partners__qr {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+
+            span {
+                text-align: center;
+            }
+
+            img {
+                width: 120px;
+                aspect-ratio: 1;
+                padding: 6px;
+                background: #fff;
+                border-radius: 12px;
+            }
+        }
+    }
+
+    @include down(lg) {
+        gap: 48px;
+
+        &__content {
+            gap: 32px;
+
+            .partners__frame-action {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 24px;
+
+                ul {
+                    order: -1;
+                }
+            }
+
+            .partners__qr img {
+                width: 104px;
+            }
+        }
+    }
+
+    @include down(tablet) {
+        &__content {
+            .partners__qr {
+                display: none;
+            }
+
+            .partners__frame {
+                width: 100%;
+
+                &-text h1 br {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @include down(sm) {
+        gap: 48px;
+
+        &__content .partners__frame {
+            gap: 24px;
+
+            &-text {
+                gap: 20px;
+
+                ul {
+                    gap: 12px;
+
+                    li svg {
+                        height: 20px;
+                        margin-top: 2px;
+                    }
+                }
+            }
+
+            &-action {
+                width: 100%;
+                gap: 20px;
+
+                > a,
+                > button {
+                    width: 100%;
+                    max-width: none;
+                    justify-content: center;
+                }
+
+                ul {
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: repeat(3, minmax(0, 1fr));
+                    gap: 10px;
+
+                    li {
+                        min-width: 0;
+
+                        br {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include down(lg) {
+    .partner-hero {
+        min-height: 760px;
+    }
+}
+
+@include down(sm) {
+    .partner-hero {
+        min-height: 844px;
+        padding-bottom: 32px;
+
+        &--business .block__background {
+            object-position: 58% center;
+        }
+
+        &--authors .block__background {
+            object-position: 48% center;
+        }
+
+        > .container {
+            width: calc(100% - 32px);
+        }
+    }
+
+    .partner-hero--authors {
+        min-height: 830px;
+    }
+}

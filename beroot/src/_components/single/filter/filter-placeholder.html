@@ -1,0 +1,17 @@
+<button class="routes__filter-open button button--medium button--white button--rounded-full" type="button"
+    data-catalog-filter-open aria-expanded="false" aria-controls="catalog-filter">
+    <i data-lucide="list-filter"></i>
+    Фильтры
+</button>
+<div class="routes__content-filter" id="catalog-filter" data-catalog-filter role="dialog" aria-modal="true"
+    aria-labelledby="catalog-filter-title" aria-hidden="true">
+    <div class="routes__filter-dialog">
+        <div class="routes__filter-head">
+            <h2 class="heading heading--small heading--color-black" id="catalog-filter-title">Фильтры</h2>
+            <button class="routes__filter-close" type="button" data-catalog-filter-close aria-label="Закрыть фильтры">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <div class="routes__filter-placeholder" aria-label="Здесь будет фильтр WordPress"></div>
+    </div>
+</div>

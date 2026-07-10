@@ -1,0 +1,103 @@
+<link rel="stylesheet" href="./header.scss">
+
+<header class="header">
+  <div class="container">
+    <div class="header__body">
+      <a href="" class="header__logo">
+        <img src="@/assets/_images/logo.svg" alt="">
+      </a>
+      <nav class="header__desktop-nav" aria-label="Основная навигация">
+        <ul>
+          <li class="text text--medium text--color-black">
+            <a href="">
+              Санкт-Петербург
+            </a>
+          </li>
+          <li class="text text--medium text--color-black">
+            <a href="">
+              Москва
+            </a>
+          </li>
+          <li class="text text--medium text--color-black">
+            <a href="">
+              Авторам
+            </a>
+          </li>
+          <li class="text text--medium text--color-black">
+            <a href="">
+              Партнёрам
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <a href="" class="header__download button button--large button--blue button--rounded-full">
+        Скачать приложение
+        <i data-lucide="arrow-down-right"></i>
+      </a>
+      <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false"
+        aria-controls="header-menu">
+        <i data-lucide="text-align-justify"></i>
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+  </div>
+  <div class="header__menu" id="header-menu" aria-hidden="true">
+    <div class="header__menu-inner">
+      <div class="header__menu-navigation">
+        <nav class="header__menu-cities" aria-label="Города">
+          <span class="heading heading--small heading--color-black">Города</span>
+          <ul class="text text--medium text--color-grey">
+            <li><a href="">Санкт-Петербург</a></li>
+            <li><a href="">Москва</a></li>
+            <li><a href="">Казань</a></li>
+            <li><a href="">Калининград</a></li>
+            <li><a href="">Другие города</a></li>
+          </ul>
+        </nav>
+        <div class="header__menu-secondary">
+          <nav aria-label="Проект">
+            <span class="heading heading--small heading--color-black">Проект</span>
+            <ul class="text text--medium text--color-grey">
+              <li><a href="">Стать автором</a></li>
+              <li><a href="">Партнёрам</a></li>
+              <li><a href="">О проекте</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Поддержка">
+            <span class="heading heading--small heading--color-black">Поддержка</span>
+            <ul class="text text--medium text--color-grey">
+              <li><a href="">Написать нам</a></li>
+              <li><a href="">Условия</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="header__menu-wrapper">
+        <div class="header__menu-action">
+          <div class="action__start">
+            <p class="text text--medium text--color-grey">
+              Мобильный гид по городам России. Пешеходные <br>
+              маршруты, аудиоэкскурсии, необычные места.
+            </p>
+            <a class="button button--medium button--blue button--rounded-full" href="">
+              Скачать приложение
+              <i data-lucide="arrow-down-right"></i>
+            </a>
+          </div>
+          <div class="header__menu-apps">
+            <a href=""><img src="@/assets/_images/hero/appstore.svg" alt="Скачать в App Store"></a>
+            <a href=""><img src="@/assets/_images/hero/googleplay.svg" alt="Скачать в Google Play"></a>
+          </div>
+        </div>
+        <div class="header__menu-footer text text--small text--color-grey">
+          <p>© 2026 BeetRoute. Все права защищены</p>
+          <a href="">Пешеходные маршруты Санкт-Петербург</a>
+          <div>
+            <a href="">Аудиогиды Москва</a>
+            <a href="">Прогулки Казань</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

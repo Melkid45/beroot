@@ -1,0 +1,133 @@
+@use '../routes/routes';
+@use '../../../assets/_styles/breakpoints' as *;
+
+.routes {
+    &__banner {
+        width: 100%;
+        min-height: 160px;
+        padding: 42px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 24px;
+        background: var(--blue);
+
+        &-text {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            position: relative;
+            z-index: 2;
+
+            p {
+                color: var(--light-white-65);
+            }
+        }
+
+        &-img {
+            position: absolute;
+            width: auto;
+            height: 156px;
+            left: 50%;
+            bottom: 0;
+            z-index: 1;
+            transform: translateX(-50%);
+        }
+
+        &-action {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            z-index: 2;
+
+            a,
+            img {
+                display: block;
+                width: auto;
+                height: 50px;
+            }
+        }
+    }
+
+    &__content-frame:has(.location__item) {
+        .location__item {
+            grid-row: span 1;
+            grid-column: span 1;
+        }
+
+        .location__item-preview {
+            min-height: 220px;
+        }
+
+        .location__item:nth-child(2) {
+            grid-row: span 2;
+        }
+    }
+
+    @include down(lg) {
+        &__banner-img {
+            opacity: 0.55;
+        }
+    }
+
+    @include down(md) {
+        &__banner {
+            padding: 32px;
+
+            &-img {
+                left: 65%;
+            }
+
+            &-action {
+                flex-direction: column;
+            }
+        }
+
+        &__content-frame:has(.location__item) .location__item:nth-child(2) {
+            grid-row: span 1;
+        }
+    }
+
+    @include down(sm) {
+        &__banner {
+            min-height: 330px;
+            padding: 24px;
+            align-items: flex-start;
+            flex-direction: column;
+            border-radius: 18px;
+
+            &-text br {
+                display: none;
+            }
+
+            &-img {
+                left: 50%;
+                height: 145px;
+                opacity: 0.65;
+            }
+
+            &-action {
+                width: 100%;
+                align-items: stretch;
+                flex-direction: row;
+
+                a {
+                    width: calc(50% - 5px);
+                    height: auto;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+
+        &__content-frame:has(.location__item) .location__item-preview {
+            min-height: 240px;
+        }
+    }
+}

@@ -1,0 +1,201 @@
+@use '../../../assets/_styles/breakpoints' as *;
+
+.content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    &__head{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        .head__text{
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        a{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            &:hover{
+                svg{
+                    rotate: -90deg;
+                }
+            }
+            svg{
+                height: 24px;
+                width: auto;
+                transition: all 0.5s ease;
+            }
+        }
+    }
+    &__frame{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        align-items: center;
+        .content__wrapper{
+            max-height: 574px;
+            overflow: visible;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .content__item{
+            min-height: 574px;
+            height: auto;
+            width: 100%;
+            border-radius: 24px;
+            position: relative;
+            padding: 21px 21px 32px 21px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 32px;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            &:hover,
+            &:focus-within{
+                min-height: 604px;
+                button{
+                    opacity: 1;
+                    margin-top: 0;
+                }
+            }
+            button{
+                position: absolute;
+                z-index: 2;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                transition: all 0.5s ease;
+                opacity: 0;
+                margin-top: 16px;
+            }
+            img{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 0;
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                background: linear-gradient(0deg, rgba(17, 18, 20, 0.7) 0%, rgba(17, 18, 20, 0.1) 50%, rgba(17, 18, 20, 0.5) 100%);
+            }
+            &-head{
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                z-index: 2;
+                .content__avatar{
+                    width: 42px;
+                    aspect-ratio: 1/1;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-transform: uppercase;
+                    z-index: 2;
+                    background: #00E1DE;
+                }
+            }
+            h3{
+                z-index: 2;
+                padding-left: 11px;
+            }
+        }
+    }
+
+    @include down(xl) {
+        min-height: 561px;
+        gap: 32px;
+
+        &__head .head__text {
+            gap: 24px;
+        }
+
+        &__frame {
+            gap: 16px;
+
+            .content__wrapper {
+                max-height: 431px;
+            }
+
+            .content__item {
+                min-height: 431px;
+                height: 431px;
+                padding: 16px 16px 24px;
+                border-radius: 18px;
+
+                &:hover,
+                &:focus-within {
+                    min-height: 431px;
+                }
+
+                &-head .content__avatar {
+                    width: 32px;
+                }
+            }
+        }
+    }
+
+    @include down(wide) {
+        min-height: 0;
+
+        &__frame {
+            display: flex;
+            align-items: stretch;
+            justify-content: flex-start;
+            overflow-x: auto;
+            padding-bottom: 12px;
+            scroll-snap-type: x proximity;
+            scrollbar-width: thin;
+            scrollbar-color: var(--blue) var(--light-blue);
+
+            .content__wrapper {
+                width: 243px;
+                min-width: 243px;
+                scroll-snap-align: start;
+            }
+        }
+    }
+
+    @include down(sm) {
+        min-height: 0;
+        width: calc(100% + 16px);
+
+        &__head {
+            width: calc(100% - 16px);
+
+            > a {
+                display: none;
+            }
+        }
+
+        &__frame {
+            display: flex;
+            align-items: stretch;
+            overflow-x: auto;
+            padding-bottom: 19px;
+            scroll-snap-type: x proximity;
+            scrollbar-width: thin;
+            scrollbar-color: var(--blue) var(--light-blue);
+
+            .content__wrapper {
+                width: 243px;
+                min-width: 243px;
+                scroll-snap-align: start;
+            }
+        }
+    }
+}

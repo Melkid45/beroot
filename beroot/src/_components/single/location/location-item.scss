@@ -1,0 +1,102 @@
+.location__item {
+    border-radius: 16px;
+    background: #fff;
+    padding: 16px;
+    box-shadow: 0px 5.33px 17.33px 0px #9191911A;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &-text {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        flex-shrink: 0;
+        padding: 0 16px 16px 16px;
+    }
+
+    &-preview {
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        overflow: hidden;
+        position: relative;
+
+        &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background: linear-gradient(0deg, rgba(17, 18, 20, 0.5) 0%, rgba(17, 18, 20, 0) 50%, rgba(17, 18, 20, 0.5) 100%);
+        }
+
+        .location__bonus,
+        .location__new {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 8px 16px;
+            border-radius: 10px;
+            z-index: 2;
+        }
+
+        .location__bonus {
+            background: #fff;
+            color: var(--blue);
+        }
+
+        .location__new {
+            background: var(--blue);
+            color: #fff;
+        }
+
+        .location__map {
+            width: 42px;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            z-index: 2;
+
+            svg {
+                fill: var(--blue);
+                stroke: var(--blue);
+
+                circle {
+                    fill: #fff;
+                    stroke: #fff;
+                }
+            }
+        }
+
+        .location__rating {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            padding: 8px 14px;
+            border-radius: 10px;
+            background: #fff;
+            z-index: 2;
+
+            svg {
+                height: 16px;
+                width: auto;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+    }
+}

@@ -1,0 +1,85 @@
+@use '@/assets/_styles/breakpoints' as *;
+
+.person__audio {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: #F0F4F9;
+    border-radius: 16px;
+    gap: 20px;
+
+    &-time {
+        min-width: 54px;
+        text-align: center;
+    }
+
+    &-timeline {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4px;
+        cursor: pointer;
+        min-width: 0;
+
+        .audio__bar {
+            flex: 0 0 4px;
+            height: var(--bar-height, 18px);
+            border-radius: 999px;
+            background: #A6C3F1;
+            transition: background 0.2s ease, transform 0.2s ease;
+
+            &.is-active {
+                background: var(--blue);
+            }
+        }
+    }
+
+    button {
+        width: 54px;
+        aspect-ratio: 1/1;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 5.33px 17.33px 0px #9191911A;
+
+        svg {
+            fill: #fff;
+        }
+
+        .lucide-pause {
+            display: none;
+        }
+    }
+
+    &.is-playing {
+        button {
+            .lucide-play {
+                display: none;
+            }
+
+            .lucide-pause {
+                display: block;
+            }
+        }
+    }
+
+    @include down(sm) {
+        padding: 12px;
+        gap: 10px;
+
+        &-time {
+            min-width: 40px;
+        }
+
+        &-timeline .audio__bar:nth-child(n + 23) {
+            display: none;
+        }
+
+        button {
+            width: 42px;
+            flex-shrink: 0;
+        }
+    }
+}

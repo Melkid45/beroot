@@ -1,0 +1,324 @@
+@use '../../assets/_styles/breakpoints' as *;
+
+.header{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 0;
+  z-index: 100;
+  background: linear-gradient(180deg, rgba(249, 250, 252, 0.4) 0%, rgba(249, 250, 252, 0) 100%);
+  backdrop-filter: blur(10px);
+  transition: all 0.5s ease;
+  &.menu-open{
+    .header__logo{
+      .white-logo{
+        display: none;
+      }
+      .black-logo{
+        display: flex;
+      }
+    }
+    .header__burger{
+      svg{
+        color: var(--black);
+      }
+    }
+  }
+  &.back{
+    transform: translateY(-100%);
+  }
+  &--white{
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+    .header__burger{
+      svg{
+        color: var(--white);
+      }
+    }
+  }
+  &__body{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    nav{
+      ul{
+        display: flex;
+        align-items: center;
+        gap: 85px;
+        li{
+          opacity: .7;
+          transition: all 0.5s ease;
+          &:hover, &.is-active{
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  &__logo{
+    height: 64px;
+    width: auto;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+    .black-logo{
+      display: none;
+    }
+  }
+
+  &__burger {
+    display: none;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0;
+    background: transparent;
+
+    svg {
+      position: absolute;
+      width: 30px;
+      height: 24px;
+      color: var(--black);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .lucide-text-align-justify {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .lucide-x {
+      opacity: 0;
+      transform: rotate(-90deg) scale(0.8);
+    }
+  }
+
+  &__menu {
+    display: none;
+  }
+
+  @include down(xl) {
+    padding: 16px 0;
+
+    &__body nav ul {
+      gap: 64px;
+    }
+
+    &__logo {
+      height: 32px;
+    }
+  }
+
+  @include down(wide) {
+    &__body nav ul {
+      gap: 32px;
+    }
+  }
+
+  @include down(lg) {
+    padding: 14px 0;
+
+    &__desktop-nav,
+    &__download {
+      display: none;
+    }
+
+    &__burger {
+      display: flex;
+    }
+
+    &__menu {
+      display: block;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      height: calc(100dvh - 60px);
+      overflow-y: auto;
+      background: var(--white);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(-12px);
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    }
+
+    &__menu-inner {
+      min-height: 100%;
+      margin: 0 auto;
+      padding: 40px 48px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 36px;
+      @include down(md){
+        padding: 40px 24px 32px;
+      }
+    }
+
+    &__menu-wrapper{
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    &__menu-action{
+      display: flex;
+      justify-content: space-between;
+      @media (max-width: 520px) {
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+      }
+      .action__start{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        @media (max-width: 520px) {
+          width: 100%;
+          p{
+            text-align: center;
+          }
+        }
+        a{
+          justify-content: center;
+          @include down(sm){
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    &__menu-navigation {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+
+      nav {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+        }
+      }
+    }
+
+    &__menu-secondary {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 32px;
+    }
+
+    &__menu-apps {
+      display: flex;
+      gap: 12px;
+      margin-top: auto;
+      @include down(sm){
+        flex-direction: column;
+      }
+      @media (max-width: 520px) {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+      }
+      a {
+        width: 165px;
+
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    &__menu-footer {
+      padding-top: 24px;
+      border-top: 1px solid var(--light-blue);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
+      justify-content: space-between;
+      @include down(sm){
+        flex-direction: column;
+      }
+      > div {
+        display: flex;
+        gap: 32px;
+      }
+    }
+
+    &.menu-open {
+      transform: none;
+      background: var(--white);
+      backdrop-filter: none;
+
+      .header__menu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: none;
+      }
+
+      .header__burger {
+        .lucide-text-align-justify {
+          opacity: 0;
+          transform: rotate(90deg) scale(0.8);
+        }
+
+        .lucide-x {
+          opacity: 1;
+          transform: rotate(0) scale(1);
+        }
+      }
+    }
+  }
+
+  @include down(sm) {
+    &__menu-inner {
+      width: auto;
+      padding: 32px 16px 48px;
+      gap: 32px;
+    }
+
+    &__menu-navigation {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    &__menu-navigation .header__menu-cities ul {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
+    &__menu-apps {
+      gap: 12px;
+
+      a {
+        width: 147px;
+      }
+    }
+
+    &__menu-footer {
+      > div {
+        gap: 24px;
+      }
+    }
+  }
+}

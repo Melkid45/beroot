@@ -48,7 +48,7 @@
           img{
             height: 74px;
             width: auto;
-            object-fit: cover;
+            object-fit: contain;
           }
         }
       }
@@ -74,7 +74,7 @@
   &__image{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   @include down(xl) {
@@ -166,7 +166,7 @@
   @include down(lg) {
     min-height: 0;
     grid-template-columns: minmax(0, 1fr) minmax(360px, 1.05fr);
-    padding: 0 48px;
+    padding: 0 0 0 48px;
 
     .hero__content {
       gap: 32px;

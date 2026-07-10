@@ -26,6 +26,8 @@ body {
   background: var(--white);
   color: var(--black);
   font-family: 'Google Sans', Arial, sans-serif;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 :where(a, button, input, textarea, select, [tabindex]):focus-visible {

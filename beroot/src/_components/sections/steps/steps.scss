@@ -34,6 +34,10 @@
             cursor: pointer;
             &:hover{
                 background: var(--blue);
+                .steps__item-number{
+                    background: linear-gradient(180deg, rgba(201, 219, 247, 0.15) 0%, rgba(219, 231, 249, 0.039) 58.96%, rgba(255, 255, 255, 0) 100%);
+                    background-clip: text;
+                }
                 .steps__item-icon{
                     background: #fff;
                     svg{
@@ -64,6 +68,7 @@
                 position: absolute;
                 top: -24px;
                 right: 0;
+                transition: all 0.5s ease;
             }
             &-icon{
                 width: 64px;

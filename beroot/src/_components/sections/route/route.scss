@@ -21,7 +21,24 @@
                 display: flex;
                 align-items: center;
                 gap: 16px;
-
+                &-type{
+                    background: #E6EDF8;
+                    color: var(--blue);
+                }
+                &-mode{
+                    background: #E6EDF8;
+                    color: #838B99;
+                }
+                &-strength{
+                    &.hard{
+                        background: #FFEBDD;
+                        color: #B54500;
+                    }
+                    &.easy{
+                        background: #E9FFDD;
+                        color: #43B500;
+                    }
+                }
                 div {
                     padding: 10px 20px;
                     border-radius: 16px;
